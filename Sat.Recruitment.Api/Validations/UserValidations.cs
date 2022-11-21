@@ -29,8 +29,9 @@ namespace Sat.Recruitment.Api.Validations
             foreach (var user in users)
             {
                 if (user.Email == newUser.Email ||
-                    user.Phone == newUser.Phone ||
-                    user.Name == newUser.Name ||
+                    user.Phone == newUser.Phone)
+                    return true;
+                else if (user.Name == newUser.Name &&
                     user.Address == newUser.Address)
                 {
                     return true;
